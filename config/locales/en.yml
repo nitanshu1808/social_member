@@ -11,6 +11,8 @@ en:
     admin:          "Admin"
     no_result:      "No %{val} found"
     member:         "Members"
+    log_out:        "Log out"
+    welcome:        "Welcome %{val}"
   model:
     admin:
       email:      "Email"

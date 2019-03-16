@@ -1,5 +1,6 @@
 <div class="jumbotron text-center">
   <h2><%= I18n.t("app.member") %></h2>
+  <p><%= I18n.t("app.welcome", val: current_admin.name) %></p>
 </div>
 <% if @members.present? %>
   <div class="table-responsive">
@@ -34,4 +35,3 @@
     <%= I18n.t("app.no_result", val: I18n.t("app.member")) %>
   </h2>
 <% end %>
-
