@@ -1,4 +1,12 @@
 en:
   app:
-    name: "Social Member"
-    home: "Home"
+    name:           "Social Member"
+    home:           "Home"
+    sign_in:        "Sign In"
+    enter_val:      "Enter %{val}"
+    admin_sign_in:  "Sign In to the Admin Panel In order to create member"
+  model:
+    admin:
+      email:      "Email"
+      password:   "Password"
+      name:       "Name"

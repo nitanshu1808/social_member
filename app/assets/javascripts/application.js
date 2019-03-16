@@ -6,4 +6,6 @@
 //= require i18n
 //= require i18n/translations
 //= require bootstrap.min.js
+//= require custom_validator.js
+//= require custom
 //= require_tree .

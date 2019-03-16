@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :admin, :controllers => { :sessions => "admin/sessions" }
 
-  root to: "home#index"
+  devise_scope :admin do
+    get 'admin', to: 'admin/sessions#new'
+  end
 
-  authenticated :admin do
+  namespace 'admin' do
     resources :members
   end
+  
+
+  root to: "home#index"
+  
 end

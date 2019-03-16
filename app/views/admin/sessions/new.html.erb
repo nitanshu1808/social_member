@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h2><%= I18n.t("app.sign_in") %></h2>
+    <p><%= I18n.t("app.admin_sign_in") %></p>
+  </div>
+  <div class="admin-sign-in-form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, I18n.t("model.admin.email") %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+          placeholder: I18n.t("app.enter_val", val: I18n.t("model.admin.email")),
+          class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password,  I18n.t("model.admin.password") %><br />
+        <%= f.password_field :password, autocomplete: "password",
+          placeholder: I18n.t("app.enter_val", val: I18n.t("model.admin.password")),
+          class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit I18n.t("app.sign_in"), class: "btn btn-success sign-in-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
