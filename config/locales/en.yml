@@ -5,8 +5,18 @@ en:
     sign_in:        "Sign In"
     enter_val:      "Enter %{val}"
     admin_sign_in:  "Sign In to the Admin Panel In order to create member"
+    created_at:     "Created At"
+    updated_at:     "Updated At"
+    member:         "Member"
+    admin:          "Admin"
+    no_result:      "No %{val} found"
+    member:         "Members"
   model:
     admin:
       email:      "Email"
       password:   "Password"
       name:       "Name"
+    member:
+      name:           "Name"
+      url:            "URL"
+      shortened_url:  "Shortened URL"
