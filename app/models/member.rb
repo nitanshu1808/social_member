@@ -1,5 +1,6 @@
 class Member < ApplicationRecord
   include Services
+  include UrlParser
 
   paginates_per 10
 
@@ -14,9 +15,12 @@ class Member < ApplicationRecord
 
   has_many :headings, dependent: :destroy
 
-  def set_shortened_url
+  accepts_nested_attributes_for :headings
+
+  def set_shortened_url_and_headings
     self.attributes = {
-      shortened_url: Services::ShortenUrl.new( url ).convert
+      shortened_url:       Services::ShortenUrl.new( self.url ).convert,
+      headings_attributes: fetch_headings( self.url )
     }
   end
 

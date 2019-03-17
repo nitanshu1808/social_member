@@ -42,16 +42,19 @@ RSpec.describe Admin::MembersController, type: :controller do
     end
 
     context "Post #create, Creates a member" do
-      let(:member)         { build(:member) }
+      let(:member)         { build(:member, url: "https://api-ssl.bitly.com/v3/shorten" ) }
       let(:valid_params) do {  member:  member.attributes } end
 
+      before { Member.destroy_all }
+
       before { post :create, params: valid_params }
+
 
       it "verify http status" do
         expect(response).to have_http_status(302)
       end
 
-      it "saves a @co_director" do
+      it "saves a @member" do
         expect(assigns(:member).persisted?).to eql(true)
       end
 

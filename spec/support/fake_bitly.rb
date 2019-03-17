@@ -7,6 +7,10 @@ class FakeBitly < Sinatra::Base
     json_response 200, 'shorten_url.json'
   end
 
+  get "/" do
+    json_response 200, 'heading.json'
+  end
+
   private
 
   def json_response(response_code, file_name)

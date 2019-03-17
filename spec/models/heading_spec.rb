@@ -16,11 +16,6 @@ RSpec.describe Heading, type: :model do
       expect(heading.valid?).to eql( false )
     end
 
-    it "validates member presence" do
-      heading.member = nil
-      expect(heading.valid?).to eql( false )
-    end
-
     it "validates tag value" do
       heading.tag = "h7"
       expect(heading.valid?).to eql( false )
