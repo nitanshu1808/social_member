@@ -15,6 +15,7 @@ en:
     welcome:        "Welcome %{val}"
     create_member:  "Create Member"
     create:         "Create"
+    record_created: "Congratulations! %{val} created successfully"
   model:
     admin:
       email:      "Email"
@@ -26,4 +27,5 @@ en:
       shortened_url:  "Shortened URL"
   errors:
     letters_only:   "Enter characters only"
+    invalid_url:    "Please use a valid url"
 

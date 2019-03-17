@@ -2,6 +2,7 @@
   <h2><%= I18n.t("app.create_member") %></h2>
 </div>
 <div class="new_member">
+  <%= render 'admin/shared/error_messages', resource: @member %>
   <%= form_for @member, url: admin_members_path do |f| %>
 
     <div class="form-group">

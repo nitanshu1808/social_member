@@ -8,8 +8,18 @@ class Admin::MembersController < AdminController
   end
 
   def create
-    @member = Member.new( member_params )
-    # @member.calculate_shorten_url
+    begin
+      @member               = Member.new( member_params )
+      @member.shortened_url = @member.fetch_shorten_url
+      if @member.save
+        redirect_to admin_members_path, notice: I18n.t("app.record_created", val: I18n.t("app.member"))
+      else
+        render 'new'
+      end
+    rescue Exception => e
+      @member.errors.add(:base, e.message)
+      render 'new'
+    end
   end
 
   private

@@ -23,7 +23,7 @@
           <tr class='<%= cycle("success", "active") %>'>
             <td><b><%= member.id %></b></td>
             <td><%= member.name %></td>
-            <td><%= link_to member.url, member.url, target: "_blank" %></td>
+            <td><%= link_to member.url.truncate(25, omission: '...'), member.url, target: "_blank" %></td>
             <td><%= link_to member.shortened_url, member.shortened_url, target: "_blank" %></td>
             <td><%= member.created_at.to_date %></td>
             <td><%= member.updated_at.to_date %></td>

@@ -3,6 +3,7 @@
   <p><%= I18n.t("app.admin_sign_in") %></p>
 </div>
 <div class="admin-sign-in-form">
+  <%= render 'admin/shared/error_messages' %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
       <%= f.label :email, I18n.t("model.admin.email") %><br />
