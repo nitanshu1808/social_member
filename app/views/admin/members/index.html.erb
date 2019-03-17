@@ -1,6 +1,9 @@
 <div class="jumbotron text-center">
-  <h2><%= I18n.t("app.member") %></h2>
+  <h2>
+    <%= I18n.t("app.member") %>
+  </h2>
   <p><%= I18n.t("app.welcome", val: current_admin.name) %></p>
+  <%= link_to I18n.t("app.create_member"), new_admin_member_path, class: 'btn btn-success create-member-btn' %>
 </div>
 <% if @members.present? %>
   <div class="table-responsive">
