@@ -17,4 +17,29 @@ $( document ).on('turbolinks:load', function() {
       },
     }
   })
+
+  $("#new_member").validate({
+    rules: {
+      "member[name]": {
+        required:     true,
+        lettersonly:  true
+      },
+      "member[url]": {
+        required:    true,
+        url:         true
+      },
+    }, messages: {
+      "member[name]": {
+        required: I18n.t("app.enter_val", {val: I18n.t("model.member.name")}),
+      },
+      "member[url]": {
+        required:    I18n.t("app.enter_val", {val: I18n.t("model.member.url")})
+      },
+    }
+  })
+
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+     return this.optional(element) || /^[a-z\s]+$/i.test(value);
+  }, I18n.t("errors.letters_only"));
+
 })

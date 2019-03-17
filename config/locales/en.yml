@@ -14,6 +14,7 @@ en:
     log_out:        "Log out"
     welcome:        "Welcome %{val}"
     create_member:  "Create Member"
+    create:         "Create"
   model:
     admin:
       email:      "Email"
@@ -23,3 +24,6 @@ en:
       name:           "Name"
       url:            "URL"
       shortened_url:  "Shortened URL"
+  errors:
+    letters_only:   "Enter characters only"
+
