@@ -27,6 +27,7 @@ en:
       name:           "Name"
       url:            "URL"
       shortened_url:  "Shortened URL"
+      email:          "Email"
     heading:
       tag:            "Tag"
       text:           "Text"

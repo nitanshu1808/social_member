@@ -18,6 +18,14 @@
     </div>
 
     <div class="form-group">
+      <%= f.label       :email, I18n.t("model.member.email") %>
+      <%= f.text_field  :email, autofocus: true, class: "form-control" ,
+      placeholder: I18n.t("app.enter_val", val: I18n.t("model.member.email")) %>
+    </div>
+
+    <%= f.hidden_field :password, value: '12345' %>
+
+    <div class="form-group">
       <%= f.submit I18n.t("app.create"), class: "btn btn-success sign-in-btn" %>
     </div>
   <% end %>

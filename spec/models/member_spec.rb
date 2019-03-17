@@ -21,6 +21,16 @@ RSpec.describe Member, type: :model do
       expect(member.valid?).to eql( false )
     end
 
+    it "validates email presence" do
+      member.email = nil
+      expect(member.valid?).to eql( false )
+    end
+
+    it "validates password presence" do
+      member.password = nil
+      expect(member.valid?).to eql( false )
+    end
+
     it "validates url uniqueness" do
       member.url = existing_member.url
       expect(member.valid?).to eql( false )

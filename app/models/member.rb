@@ -8,7 +8,7 @@ class Member < ApplicationRecord
 
   VALID_NAME_FORMT = /\A^[a-z\s]+\z/i
 
-  validates :name, :url, :shortened_url, presence: true
+  validates :name, :url, :shortened_url, :email, :password, presence: true
   validates :url, uniqueness: true
   validates :url, format: {with: VALID_URL_FORMAT }
   validates :name, format: { with: VALID_NAME_FORMT, message: I18n.t("errors.letters_only") }

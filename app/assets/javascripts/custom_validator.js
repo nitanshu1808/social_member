@@ -28,12 +28,19 @@ $( document ).on('turbolinks:load', function() {
         required:    true,
         url:         true
       },
+      "member[email]": {
+        required:    true,
+        email:       true
+      },
     }, messages: {
       "member[name]": {
         required: I18n.t("app.enter_val", {val: I18n.t("model.member.name")}),
       },
       "member[url]": {
         required:    I18n.t("app.enter_val", {val: I18n.t("model.member.url")})
+      },
+      "member[email]": {
+        required:    I18n.t("app.enter_val", {val: I18n.t("model.member.email")})
       },
     }
   })

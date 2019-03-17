@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_17_191053) do
+ActiveRecord::Schema.define(version: 2019_03_17_233317) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_03_17_191053) do
     t.string "shortened_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "password", default: "", null: false
   end
 
 end

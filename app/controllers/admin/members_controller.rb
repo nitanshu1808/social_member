@@ -24,6 +24,6 @@ class Admin::MembersController < AdminController
 
   private
   def member_params
-    params.require(:member).permit(:name, :url)
+    params.require(:member).permit(:name, :url, :email, :password)
   end
 end
