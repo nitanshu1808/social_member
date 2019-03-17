@@ -15,7 +15,7 @@
           <th><%= I18n.t("model.member.url") %></th>
           <th><%= I18n.t("model.member.shortened_url") %></th>
           <th><%= I18n.t("app.created_at") %></th>
-          <th><%= I18n.t("app.updated_at") %></th>
+          <th><%= I18n.t("app.headings") %></th>
         </tr>
       </thead>
       <tbody>
@@ -23,10 +23,10 @@
           <tr class='<%= cycle("success", "active") %>'>
             <td><b><%= member.id %></b></td>
             <td><%= member.name %></td>
-            <td><%= link_to member.url.truncate(30, omission: '...'), member.url, target: "_blank", title: member.url %></td>
+            <td><%= link_to member.url, member.url, target: "_blank", title: member.url %></td>
             <td><%= link_to member.shortened_url, member.shortened_url, target: "_blank" %></td>
             <td><%= member.created_at.to_date %></td>
-            <td><%= member.updated_at.to_date %></td>
+            <td><%= link_to I18n.t("app.view"), admin_member_headings_path(member) %></td>
           </tr>
         <% end %>
       </tbody>
@@ -34,7 +34,7 @@
     <%= paginate @members %>
   </div>
 <% else %>
-  <h2>
+  <h2 class="text-center">
     <%= I18n.t("app.no_result", val: I18n.t("app.member")) %>
   </h2>
 <% end %>

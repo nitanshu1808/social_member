@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Admin::MembersController, type: :controller do
-  describe "verifies the co director actions" do
+  describe "verifies the member actions" do
 
     let(:admin)           { create(:admin) }
 

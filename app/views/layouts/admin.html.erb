@@ -17,7 +17,12 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active">
-            <%= link_to I18n.t("app.home"), root_url %>
+            <%= link_to I18n.t("app.member"), admin_members_path  %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to I18n.t("app.log_out"), destroy_admin_session_path, method: :delete if current_admin %>
+          </li>
         </ul>
       </div>
     </nav>

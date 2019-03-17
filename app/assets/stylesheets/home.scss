@@ -8,3 +8,9 @@
 .create-member-btn{
   float: right;
 }
+td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
