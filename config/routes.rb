@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    resources :members, only: [ :index, :new, :create ]
+    resources :members, only: [ :index, :new, :create ] do
+      resources :headings, only: [ :index ]
+    end
   end
   
 

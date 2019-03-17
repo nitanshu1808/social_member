@@ -12,6 +12,8 @@ class Member < ApplicationRecord
   validates :url, format: {with: VALID_URL_FORMAT }
   validates :name, format: { with: VALID_NAME_FORMT, message: I18n.t("errors.letters_only") }
 
+  has_many :headings, dependent: :destroy
+
   def set_shortened_url
     self.attributes = {
       shortened_url: Services::ShortenUrl.new( url ).convert

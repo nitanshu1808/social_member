@@ -28,4 +28,4 @@ en:
   errors:
     letters_only:   "Enter characters only"
     invalid_url:    "Please use a valid url"
-
+    invalid_tag:    "Invalid tag."
