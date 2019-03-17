@@ -17,9 +17,9 @@ module Services
 
     def fetch_response
       begin
-        response        = RestClient.get ENV["SHORTEN_API_URL"], {:params => @options }
-        parsed_response = JSON.parse(response) 
-        parsed_response && parsed_response["data"]["url"]
+        response = RestClient.get ENV["SHORTEN_API_URL"], {:params => @options }
+        response = JSON.parse(response)
+        response && response["data"]["url"]
       rescue RestClient::Unauthorized => error
         retries ||= 0
         if retries == 0

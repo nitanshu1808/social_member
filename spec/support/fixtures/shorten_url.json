@@ -1,0 +1,11 @@
+{
+  "status_code": 200,
+  "status_txt": "OK",
+  "data": {
+    "url": "http://bit.ly/2CnLcW5",
+    "hash": "2CnLcW5",
+    "global_hash": "2CnEOxY",
+    "long_url": "https://www.instagram.com/eat_sleep_cycle/?hl=en",
+    "new_hash": 0
+  }
+}

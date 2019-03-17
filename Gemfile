@@ -22,6 +22,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'webmock'
+  gem 'figaro'
 end
 
 group :development do
@@ -30,7 +31,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubycritic'
-  gem 'figaro'
   gem 'bullet'
   gem 'brakeman'
   gem 'awesome_print'
@@ -46,3 +46,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'rest-client'
+gem 'sinatra'

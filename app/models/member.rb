@@ -14,11 +14,8 @@ class Member < ApplicationRecord
 
   def set_shortened_url
     self.attributes = {
-      shortened_url: "Hello"
+      shortened_url: Services::ShortenUrl.new( url ).convert
     }
   end
 
 end
-
-
-# url && Services::ShortenUrl.new( url ).convert

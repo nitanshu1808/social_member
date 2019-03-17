@@ -19,6 +19,12 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
+
   config.include FactoryBot::Syntax::Methods
+
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  config.before(:each) do
+    stub_request(:get, /api-ssl.bitly.com/).to_rack( FakeBitly )
+  end
 end
