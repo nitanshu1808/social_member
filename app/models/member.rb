@@ -12,9 +12,13 @@ class Member < ApplicationRecord
   validates :url, format: {with: VALID_URL_FORMAT }
   validates :name, format: { with: VALID_NAME_FORMT, message: I18n.t("errors.letters_only") }
 
-  def fetch_shorten_url
-    url && Services::ShortenUrl.new( url ).convert
+  def set_shortened_url
+    self.attributes = {
+      shortened_url: "Hello"
+    }
   end
 
 end
 
+
+# url && Services::ShortenUrl.new( url ).convert

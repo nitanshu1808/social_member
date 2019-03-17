@@ -9,8 +9,8 @@ class Admin::MembersController < AdminController
 
   def create
     begin
-      @member               = Member.new( member_params )
-      @member.shortened_url = @member.fetch_shorten_url
+      @member = Member.new( member_params )
+      @member.set_shortened_url
       if @member.save
         redirect_to admin_members_path, notice: I18n.t("app.record_created", val: I18n.t("app.member"))
       else
