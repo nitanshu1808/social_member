@@ -1,0 +1,37 @@
+Briefly explain the GIL assuming you were addressing a non-technical audience. What are the potential cost implications of the GIL for scaling a production application?
+
+1. GIL stands for Global Interpreter Lock.
+
+2. GIL is a mechanism used in computer language interpreter to synchronize the execution of threads (A thread is the context of a program's execution, keeping track of what state it's currently in.) 
+
+3. GIL prevents multiple threads from executing at any time, only one thread shall be running, irrespective of the number of processors in your system. 
+
+4. There is always a one GIL for one interpreter process. However, it limits the parallelism reachable through concurrency. It can cause a significant slow down of the system.
+
+5. Advantages
+
+1. GIL avoids sharing of threads, that is not thread safe with other threads. 
+2. Highly beneficial for single threaded applications as it would increase the execution speed.
+
+
+
+2. Also for a non-technical audience, explain how a background job
+queuing service could help when accessing external APIs.
+
+Background Job Processing is one that is processed outside of the normal request/response workflow of any modern web application.
+
+Usually, web applications receives a request, do some processing (such as querying a database) and immediately return a response within a few milliseconds. 
+
+
+However there are some tasks, that may be started from a normal web request, but require a longer time to complete than the normal request such as: 
+
+  sending a confirmation email when the user registers on the application. This could work well in most cases, nevertheless there may be some possible ways in which this approach may be broken:
+    1. What if your email server goes down and emails cannot go out?
+    2. What if the user's email service goes down and cannot receive emails at that time?
+
+
+This is not ideal as users do not like waiting for minutes or even seconds on a unresponsive application. A long request can cause capacity issues for application servers, delaying response times for requests from other users which leads to cascading failure.
+
+In such cases, background jobs are the best way to alleviate this problem. It processes request in an asynchronous manner and queues the jobs back to back before they are actually processed. It is highly beneficial for system consuming third party web services.
+
+In addition, background jobs are also retryable.
