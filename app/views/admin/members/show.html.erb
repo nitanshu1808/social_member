@@ -5,4 +5,5 @@
   <p><%= I18n.t("app.welcome", val: @member.name) %></p>
   <%= link_to I18n.t("app.friendship"), member_friendships_path( @member ), class: "btn btn-success create-member-btn" %>
 </div>
+
 <%= render 'shared/member' %>

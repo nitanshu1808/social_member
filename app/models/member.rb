@@ -22,6 +22,9 @@ class Member < ApplicationRecord
     assoc.has_many :companions, foreign_key: 'friend_id', class_name: 'Friendship'
   end
 
+  has_many :friends,           through: :friendships
+  has_many :colleagues,        through: :companions, source: "member"
+
   accepts_nested_attributes_for :headings
 
   scope :others,         -> ( id )  { where("members.id not in (?)", id ) }

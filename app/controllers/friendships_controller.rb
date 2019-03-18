@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
   include Memberable
 
   before_action :authenticate_member!
-  before_action :find_member, only: [ :index, :create ]
+  before_action :find_member, only: [ :index, :create, :update ]
 
   def index
 
@@ -20,9 +20,9 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-  end
-
-  def destroy
+    friendship = Friendship.find_by(id: params["id"])
+    friendship.update_attributes(status: 2)
+    redirect_to member_path(@member), notice: I18n.t("app.friend_req_accepted")
   end
 
   private

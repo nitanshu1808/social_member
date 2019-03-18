@@ -33,6 +33,10 @@ en:
     friendship:        "Friendship"
     send_fr:           "Send Friend Request"
     friend_req_sent:   "Friend Request successfully sent"
+    friend:            "Friend"
+    accept_fr:         "Accept Friend Request"
+    hi:                "Hi %{val}"
+    friend_req_accepted: "Friend Request Accepted. You are now friends"
   model:
     admin:
       email:      "Email"
