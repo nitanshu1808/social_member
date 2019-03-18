@@ -29,6 +29,7 @@ en:
     member_list:       "Member List"
     view_profile:      "View Profile"
     na:                "NA"
+    invalid_status:    "Invalid status"
   model:
     admin:
       email:      "Email"
@@ -47,3 +48,5 @@ en:
     letters_only:   "Enter characters only"
     invalid_url:    "Please use a valid url"
     invalid_tag:    "Invalid tag."
+    own_friend:     "Can't be your own friend"
+    already_friend: "is already a friend"

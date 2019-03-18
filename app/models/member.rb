@@ -16,7 +16,11 @@ class Member < ApplicationRecord
   validates :name,  format: { with: VALID_NAME_FORMT, message: I18n.t("errors.letters_only") }
   validates :email, format: {with: Admin::VALID_EMAIL_REGEX }
 
-  has_many :headings, dependent: :destroy
+  with_options dependent: :destroy do |assoc|
+    assoc.has_many :headings
+    assoc.has_many :friendships
+    assoc.has_many :companions, foreign_key: 'friend_id', class_name: 'Friendship'
+  end
 
   accepts_nested_attributes_for :headings
 
@@ -31,4 +35,3 @@ class Member < ApplicationRecord
   end
 
 end
-

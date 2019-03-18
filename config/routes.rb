@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   resources :members, only: [:index, :show] do
     get 'search', on: :collection
+    resources :friendships, only: [:index, :create, :update, :destroy], shallow: true do
+      get 'search', on: :collection
+    end
   end
 
 end
