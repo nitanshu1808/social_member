@@ -10,7 +10,7 @@ en:
     member:         "Member"
     admin:          "Admin"
     no_result:      "No %{val} found"
-    member:         "Members"
+    members:        "Members"
     log_out:        "Log out"
     welcome:        "Welcome %{val}"
     create_member:  "Create Member"
@@ -18,8 +18,11 @@ en:
     record_created: "Congratulations! %{val} created successfully"
     headings:       "Headings"
     view:           "View"
-    member_sign_in: "Sign In to Your Account Inorder to continue"
+    member_sign_in:    "Sign In to Your Account Inorder to continue"
     wrong_credentials: "Invalid Email/Password"
+    app_welcome:       "Welcome to %{val}"
+    app_msg:           "Sign In As Admin/Member to proceed further"
+    sign_in_as:        "%{val} Sign In"
   model:
     admin:
       email:      "Email"

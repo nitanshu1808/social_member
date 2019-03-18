@@ -1,26 +1,6 @@
 <div class="jumbotron text-center">
-  <h2><%= I18n.t("app.sign_in") %></h2>
-  <p><%= I18n.t("app.member_sign_in") %></p>
-</div>
-<div class="admin-sign-in-form">
-  <%= render 'admin/shared/error_messages', resource: @member %>
-  <%= form_for(@member, url: member_session_path(@member)) do |f| %>
-    <div class="form-group">
-      <%= f.label :email, I18n.t("model.member.email") %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",
-        placeholder: I18n.t("app.enter_val", val: I18n.t("model.member.email")),
-        class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password,  I18n.t("model.member.password") %><br />
-      <%= f.password_field :password, autocomplete: "password",
-        placeholder: I18n.t("app.enter_val", val: I18n.t("model.member.password")),
-        class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <%= f.submit I18n.t("app.sign_in"), class: "btn btn-success sign-in-btn" %>
-    </div>
-  <% end %>
+  <h2><%= I18n.t("app.app_welcome", val: I18n.t("app.name") ) %></h2>
+  <p><%= I18n.t("app.app_msg") %></p>
+  <%= link_to I18n.t("app.sign_in_as", val: I18n.t("app.member")), new_member_session_path, class: "btn btn-success create-member-btn" %>
+  <%= link_to I18n.t("app.sign_in_as", val: I18n.t("app.admin") ), new_admin_session_path, class: "btn btn-success btn-float-left" %>
 </div>
