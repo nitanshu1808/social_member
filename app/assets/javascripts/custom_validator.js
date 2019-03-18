@@ -8,7 +8,8 @@ $( document ).on('turbolinks:load', function() {
       "admin[password]": {
         required:    true
       },
-    }, messages: {
+    },
+    messages: {
       "admin[email]": {
         required: I18n.t("app.enter_val", {val: I18n.t("model.admin.email")}),
       },
@@ -29,10 +30,14 @@ $( document ).on('turbolinks:load', function() {
         url:         true
       },
       "member[email]": {
-        required:    true,
-        email:       true
+        required: true,
+        email:    true
       },
-    }, messages: {
+      "member[password]": {
+        required:    true
+      },
+    },
+    messages: {
       "member[name]": {
         required: I18n.t("app.enter_val", {val: I18n.t("model.member.name")}),
       },
@@ -42,11 +47,15 @@ $( document ).on('turbolinks:load', function() {
       "member[email]": {
         required:    I18n.t("app.enter_val", {val: I18n.t("model.member.email")})
       },
+      "member[password]": {
+        required:    I18n.t("app.enter_val", {val: I18n.t("model.member.password")})
+      },
     }
   })
 
   jQuery.validator.addMethod("lettersonly", function(value, element) {
      return this.optional(element) || /^[a-z\s]+$/i.test(value);
   }, I18n.t("errors.letters_only"));
+
 
 })

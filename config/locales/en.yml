@@ -18,6 +18,7 @@ en:
     record_created: "Congratulations! %{val} created successfully"
     headings:       "Headings"
     view:           "View"
+    member_sign_in: "Sign In to Your Account Inorder to continue"
   model:
     admin:
       email:      "Email"
@@ -28,6 +29,7 @@ en:
       url:            "URL"
       shortened_url:  "Shortened URL"
       email:          "Email"
+      password:       "Password"
     heading:
       tag:            "Tag"
       text:           "Text"
