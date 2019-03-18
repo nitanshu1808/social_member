@@ -20,9 +20,17 @@
             <%= link_to I18n.t("app.home"), root_url %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to I18n.t("app.log_out"), destroy_member_session_path, method: :delete if current_member %>
-          </li>
+          <% if current_member %>
+            <li>
+              <%= link_to I18n.t("app.profile"), member_path(current_member) %>
+            </li>
+            <li>
+              <%= link_to I18n.t("app.members"), members_path %>
+            </li>
+            <li>
+              <%= link_to I18n.t("app.log_out"), destroy_member_session_path, method: :delete  %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>

@@ -1,4 +1,6 @@
 class Admin::MembersController < AdminController
+  include Memberable
+
   def index
     @members = Member.page( params["page"] )
   end

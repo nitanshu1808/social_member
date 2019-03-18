@@ -9,7 +9,7 @@
           <th><%= I18n.t("model.member.url") %></th>
           <th><%= I18n.t("model.member.shortened_url") %></th>
           <th><%= I18n.t("app.created_at") %></th>
-          <th><%= I18n.t("app.headings") %></th>
+          <th><%= I18n.t("app.profile")  %></th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +21,7 @@
             <td><%= link_to member.url, member.url, target: "_blank", title: member.url %></td>
             <td><%= link_to member.shortened_url, member.shortened_url, target: "_blank" %></td>
             <td><%= member.created_at.to_date %></td>
-            <td><%= link_to I18n.t("app.view"), view_heading_path( member ) %></td>
+            <td><%= link_to I18n.t("app.view_profile"), view_profile_path( member ) %></td>
           </tr>
         <% end %>
       </tbody>

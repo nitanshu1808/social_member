@@ -1,6 +1,8 @@
 class MembersController < ApplicationController
   before_action :authenticate_member!
 
+  include Memberable
+
   def index
     @members = Member.others( current_member.id ).page( params["page"] )
   end

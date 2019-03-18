@@ -7,12 +7,9 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    resources :members, only: [ :index, :new, :create ] do
-      resources :headings, only: [ :index ]
-    end
+    resources :members, only: [ :index, :new, :create, :show ]
   end
   
-
   root to: "home#index"
 
   resources :members, only: [:index, :show] do
