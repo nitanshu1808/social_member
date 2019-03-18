@@ -23,6 +23,8 @@ en:
     app_welcome:       "Welcome to %{val}"
     app_msg:           "Sign In As Admin/Member to proceed further"
     sign_in_as:        "%{val} Sign In"
+    heading:           "Heading"
+    search:          "Search"
   model:
     admin:
       email:      "Email"

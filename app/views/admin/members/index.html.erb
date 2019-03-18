@@ -5,38 +5,5 @@
   <p><%= I18n.t("app.welcome", val: current_admin.name) %></p>
   <%= link_to I18n.t("app.create_member"), new_admin_member_path, class: 'btn btn-success create-member-btn' %>
 </div>
-<% if @members.present? %>
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th><%= I18n.t("model.member.name") %></th>
-          <th><%= I18n.t("model.member.email") %></th>
-          <th><%= I18n.t("model.member.url") %></th>
-          <th><%= I18n.t("model.member.shortened_url") %></th>
-          <th><%= I18n.t("app.created_at") %></th>
-          <th><%= I18n.t("app.headings") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @members.each do |member| %>
-          <tr class='<%= cycle("success", "active") %>'>
-            <td><b><%= member.id %></b></td>
-            <td><%= member.name %></td>
-            <td><%= member.email %></td>
-            <td><%= link_to member.url, member.url, target: "_blank", title: member.url %></td>
-            <td><%= link_to member.shortened_url, member.shortened_url, target: "_blank" %></td>
-            <td><%= member.created_at.to_date %></td>
-            <td><%= link_to I18n.t("app.view"), admin_member_headings_path(member) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%= paginate @members %>
-  </div>
-<% else %>
-  <h2 class="text-center">
-    <%= I18n.t("app.no_result", val: I18n.t("app.member")) %>
-  </h2>
-<% end %>
+
+<%= render 'shared/members' %>

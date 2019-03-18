@@ -20,6 +20,9 @@ class Member < ApplicationRecord
 
   accepts_nested_attributes_for :headings
 
+  scope :others,         -> ( id )  { where("members.id not in (?)", id ) }
+  scope :match_headings, -> ( text ){ joins(:headings).where("headings.text LIKE (?)", "%#{text}%" ).distinct }
+
   def set_shortened_url_and_headings
     self.attributes = {
       shortened_url:       Services::ShortenUrl.new( self.url ).convert,

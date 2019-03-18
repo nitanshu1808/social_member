@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+  <h2>
+    <%= I18n.t("app.member") %>
+  </h2>
+  <p><%= I18n.t("app.welcome", val: current_member.name) %></p>
+</div>
+
+<%= form_tag(search_members_path, method: "get", class: 'form-inline') do %>
+  <div class="form-group">
+    <%= text_field_tag 'heading', params["heading"], placeholder: I18n.t("app.enter_val", val: I18n.t("app.heading")), class: 'form-control' %>
+  </div>
+
+  <%= submit_tag I18n.t("app.search"), class: "btn btn-default" %>
+<% end %>
+
+<%= render 'shared/members' %>

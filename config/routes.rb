@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :members, only: [:index, :show]
+  resources :members, only: [:index, :show] do
+    get 'search', on: :collection
+  end
 
 end
