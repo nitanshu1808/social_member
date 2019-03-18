@@ -3,46 +3,10 @@
     <%= I18n.t("app.member") %>
   </h2>
   <p><%= I18n.t("app.welcome", val: @member.name) %></p>
-</div>
 
-<div class="text-center container">
-  <div class="form-group">
-    <label class="control-label col-sm-4"><%= I18n.t("model.member.email") %></label>
-    <div class="col-sm-8">
-      <label class="control-label"><%= @member.email.present? && @member.email || I18n.t("app.na") %></label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-4"><%= I18n.t("model.member.name") %></label>
-    <div class="col-sm-8">
-      <label class="control-label"><%= @member.name || I18n.t("app.na") %></label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-4"><%= I18n.t("model.member.url") %></label>
-    <div class="col-sm-8">
-      <label class="control-label"><%= link_to @member.url, @member.url %></label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-4"><%= I18n.t("model.member.shortened_url") %></label>
-    <div class="col-sm-8">
-      <label class="control-label"><%= link_to @member.shortened_url, @member.shortened_url %></label>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-4"><%= I18n.t("app.created_at") %></label>
-    <div class="col-sm-8">
-      <label class="control-label"><%= @member.created_at.to_date %></label>
-    </div>
-  </div>
+  <%= link_to I18n.t("app.send_fr"), member_friendships_path( @member ), class: "btn btn-success btn-float-left", method: :post, remote: true if current_member != @member %>
+  <%= link_to I18n.t("app.friendship"), member_friendships_path( @member ), class: "btn btn-success create-member-btn" %>
 
 </div>
 
-<div class="jumbotron text-center">
-  <h4>
-    <%= I18n.t("app.member") %> <%= I18n.t("app.headings") %>
-  </h4>
-</div>
-
-<%= render 'shared/headings' %>
+<%= render 'shared/member' %>

@@ -1,0 +1,8 @@
+<div class="jumbotron text-center">
+  <h2>
+    <%= I18n.t("app.member") %>
+  </h2>
+  <p><%= I18n.t("app.welcome", val: @member.name) %></p>
+</div>
+
+<%= render 'shared/member' %>

@@ -30,6 +30,8 @@ en:
     view_profile:      "View Profile"
     na:                "NA"
     invalid_status:    "Invalid status"
+    friendship:        "Friendship"
+    send_fr:           "Send Friend Request"
   model:
     admin:
       email:      "Email"
