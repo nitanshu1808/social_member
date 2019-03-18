@@ -36,6 +36,11 @@ RSpec.describe Member, type: :model do
       expect(member.valid?).to eql( false )
     end
 
+    it "validates email uniqueness" do
+      member.url = existing_member.email
+      expect(member.valid?).to eql( false )
+    end
+
     it "validates url format" do
       member.url = "www.localhost:3000"
       expect(member.valid?).to eql( false )

@@ -43,7 +43,7 @@ RSpec.describe Admin::MembersController, type: :controller do
 
     context "Post #create, Creates a member" do
       let(:member)         { build(:member, url: "https://api-ssl.bitly.com/v3/shorten" ) }
-      let(:valid_params) do {  member:  member.attributes } end
+      let(:valid_params) do {  member:  member.attributes.merge(password: '12345') } end
 
       before { Member.destroy_all }
 

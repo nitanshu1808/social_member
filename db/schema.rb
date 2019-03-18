@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2019_03_17_233317) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
-    t.string "password", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
   end
 
 end
