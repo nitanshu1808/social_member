@@ -1,5 +1,4 @@
 class Admin::MembersController < AdminController
-  include Memberable
 
   def index
     @members = Member.page( params["page"] )
@@ -7,6 +6,12 @@ class Admin::MembersController < AdminController
 
   def new
     @member = Member.new
+  end
+
+  def show
+    @member     = Member.includes(:headings).find_by(id: params["id"])
+    @headings   = @member.headings.page( params["page"] )
+    render 'members/show'
   end
 
   def create

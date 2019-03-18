@@ -1,5 +1,5 @@
 class Friendship < ApplicationRecord
-  STATUS_OPTIONS = %w(pending declined accepted )
+  STATUS_OPTIONS = %w(pending declined friends )
 
   belongs_to :member
   belongs_to :friend, class_name: 'Member'
@@ -10,6 +10,8 @@ class Friendship < ApplicationRecord
   validate :not_self
 
   enum status: STATUS_OPTIONS
+
+  scope :is_friend, -> (id){ where("member_id = ? OR friend_id = ?", id, id ) }
 
   def not_self
     errors.add(:base, I18n.t("errors.own_friend")) if member == friend

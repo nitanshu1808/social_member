@@ -4,9 +4,12 @@
   </h2>
   <p><%= I18n.t("app.welcome", val: @member.name) %></p>
 
-  <%= link_to I18n.t("app.send_fr"), member_friendships_path( @member ), class: "btn btn-success btn-float-left", method: :post, remote: true if current_member != @member %>
+  <%= link_to I18n.t("app.send_fr"), member_friendships_path( @member ), class: "btn btn-success btn-float-left", method: :post if different_members( @member ) %>
+
   <%= link_to I18n.t("app.friendship"), member_friendships_path( @member ), class: "btn btn-success create-member-btn" %>
 
 </div>
+
+<%= render 'admin/shared/error_messages', resource: @member %>
 
 <%= render 'shared/member' %>
