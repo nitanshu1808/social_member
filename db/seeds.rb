@@ -11,3 +11,5 @@ admins.each do |obj|
     password:   obj[:email]
   })
 end
+
+FactorBot.create_list(:member, 2)

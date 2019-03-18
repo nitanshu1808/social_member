@@ -19,6 +19,7 @@ en:
     headings:       "Headings"
     view:           "View"
     member_sign_in: "Sign In to Your Account Inorder to continue"
+    wrong_credentials: "Invalid Email/Password"
   model:
     admin:
       email:      "Email"

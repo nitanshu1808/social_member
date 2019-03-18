@@ -5,5 +5,10 @@ FactoryBot.define do
     shortened_url   { FFaker::Youtube.share_url }
     email           { FFaker::Internet.email }
     password        { "12345" }
+
+    after :create do |member|
+      create :heading, member: member   # has_many
+    end
+
   end
 end
