@@ -37,6 +37,9 @@ en:
     accept_fr:         "Accept Friend Request"
     hi:                "Hi %{val}"
     friend_req_accepted: "Friend Request Accepted. You are now friends"
+    record:              "Record"
+    friends:            "Friends"
+    colleagues:         "Colleagues"
   model:
     admin:
       email:      "Email"

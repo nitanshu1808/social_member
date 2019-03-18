@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <h1>
+    <%= I18n.t("app.friends") %>
+  </h1>
+</div>
+
+<% if @friends.present? %>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= I18n.t("model.member.name") %></th>
+          <th><%= I18n.t("model.member.email") %></th>
+          <th><%= I18n.t("model.member.url") %></th>
+          <th><%= I18n.t("model.member.shortened_url") %></th>
+          <th><%= I18n.t("app.created_at") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @friends.each do |member| %>
+          <tr class='<%= cycle("success", "active") %>'>
+            <td><b><%= member.id %></b></td>
+            <td><%= member.name %></td>
+            <td><%= member.email %></td>
+            <td><%= link_to member.url, member.url, target: "_blank", title: member.url %></td>
+            <td><%= link_to member.shortened_url, member.shortened_url, target: "_blank" %></td>
+            <td><%= member.created_at.to_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <h2 class="text-center">
+    <%= I18n.t("app.no_result", val: I18n.t("app.friends")) %>
+  </h2>
+<% end %>

@@ -5,7 +5,7 @@ class FriendshipsController < ApplicationController
   before_action :find_member, only: [ :index, :create, :update ]
 
   def index
-
+    @friends    = @member.friends.page(params["page"])
   end
 
   def create
