@@ -63,5 +63,21 @@ RSpec.describe Admin::MembersController, type: :controller do
       end
     end
 
+    context "Show #get, Displays Member Profile" do
+
+      let(:member)           { create(:member) }
+      before { get :show, params: {id: member.id} }
+
+      it "verify http status" do
+        expect(response).to have_http_status(:success)
+      end
+
+      it "assigns heading list to @headings" do
+        expect(assigns(:member)).to eql(member)
+        expect(assigns(:headings)).to match_array(member.headings)
+      end
+
+    end
+
   end
 end
