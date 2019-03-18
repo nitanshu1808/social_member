@@ -1,10 +1,10 @@
 # Introduction
 
-Social Member is a social networking platform for members. It connects members with one another by sending friend requests. Furthermore, it consumes bitly for shortening the url's.
+Social Member is a social networking platform for members. It connects members with one another by sending friend requests. Furthermore, it consumes bitly webservices for shortening the url's.
 The resultant urls html document headings are parsed.
 
 # Ruby version
-System uses ruby '~>2.4.1'   and  rails, '~> 5.2.0'
+System uses ruby "2.4.1"   and  rails "5.2.0"
 
 # Database creation
 Relation Database used: sqlite3
